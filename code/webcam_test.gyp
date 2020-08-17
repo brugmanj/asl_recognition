@@ -28,7 +28,7 @@ while True:
         i += 1
 
     # Resizing the image, preparing for input to CNN
-    test_img = img.reshape(1, 200, 200, 1)
+    test_img = resized.reshape(1, 200, 200, 1)
 
     # Predicting with CNN
     pred = model.predict_classes(test_img)
@@ -53,7 +53,7 @@ while True:
                 4,  
                 cv2.LINE_4) 
     frame = cv2.resize(frame, (960, 540), fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
-    cv2.imshow('Input', resized)
+    cv2.imshow('Input', frame)
 
     c = cv2.waitKey(1)
     if c == 27:
